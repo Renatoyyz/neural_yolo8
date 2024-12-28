@@ -24,6 +24,29 @@ pip install opencv-python torch matplotlib ultralytics
 
 A classe `YOLOPredictor` é responsável por carregar o modelo YOLO e realizar predições em imagens.
 
+### Download dos Modelos
+
+Para baixar os modelos do YOLOv8, você pode utilizar o comando `wget` ou fazer o download diretamente do repositório oficial. Aqui estão exemplos de como baixar os modelos YOLOv8m, YOLOv8m-seg, YOLOv8n, YOLOv8x e YOLOv8x-seg:
+
+```bash
+# YOLOv8m
+wget https://github.com/ultralytics/yolov8/releases/download/v8.0/yolov8m.pt -O yolov8m.pt
+
+# YOLOv8m-seg
+wget https://github.com/ultralytics/yolov8/releases/download/v8.0/yolov8m-seg.pt -O yolov8m-seg.pt
+
+# YOLOv8n
+wget https://github.com/ultralytics/yolov8/releases/download/v8.0/yolov8n.pt -O yolov8n.pt
+
+# YOLOv8x
+wget https://github.com/ultralytics/yolov8/releases/download/v8.0/yolov8x.pt -O yolov8x.pt
+
+# YOLOv8x-seg
+wget https://github.com/ultralytics/yolov8/releases/download/v8.0/yolov8x-seg.pt -O yolov8x-seg.pt
+```
+
+Certifique-se de salvar o modelo no diretório apropriado para que ele possa ser carregado pelo `YOLOPredictor`.
+
 #### Inicialização
 
 Para inicializar a classe, você pode especificar o caminho do modelo e o dispositivo (CPU ou GPU) a ser utilizado:

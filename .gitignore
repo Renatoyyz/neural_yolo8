@@ -4,6 +4,7 @@ yolov8_/
 YOLO_recursos/
 TestePelasmoto_01.v1i.yolov8/
 img/
+temp/
 yolov8m-seg.pt
 yolov8m.pt
 yolov8n.pt
