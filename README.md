@@ -73,6 +73,45 @@ ultralytics
 
 Certifique-se de que o arquivo `requirements.txt` esteja no mesmo diretório onde você executa o comando `pip install -r requirements.txt`.
 
+## Instalação do LabelImg com Qt5
+
+Para instalar o LabelImg compatível com Qt5, siga os passos abaixo:
+
+### Passo 1: Clonar o Repositório
+
+Primeiro, clone o repositório do LabelImg:
+
+```bash
+git clone https://github.com/tzutalin/labelImg.git
+cd labelImg
+```
+
+### Passo 2: Instalar as Dependências
+
+Instale as dependências necessárias utilizando o `pip`:
+
+```bash
+pip install pyqt5 lxml
+```
+
+### Passo 3: Compilar os Recursos
+
+Compile os recursos do LabelImg:
+
+```bash
+make qt5py3
+```
+
+### Passo 4: Executar o LabelImg
+
+Finalmente, execute o LabelImg:
+
+```bash
+python labelImg.py
+```
+
+Agora você deve ter o LabelImg instalado e funcionando com Qt5.
+
 ## Uso
 
 ### YOLOPredictor
