@@ -18,6 +18,61 @@ Você pode instalar todas as dependências necessárias utilizando o `pip`:
 pip install opencv-python torch matplotlib ultralytics
 ```
 
+## Configuração do Ambiente Virtual
+
+Para garantir que todas as dependências sejam instaladas corretamente e evitar conflitos com outras bibliotecas, é recomendável criar um ambiente virtual. Siga os passos abaixo para configurar um ambiente virtual e instalar as dependências a partir de um arquivo `requirements.txt`.
+
+### Passo 1: Criação do Ambiente Virtual
+
+Primeiro, crie um ambiente virtual utilizando o `venv`:
+
+```bash
+python -m venv venv
+```
+
+### Passo 2: Ativação do Ambiente Virtual
+
+Ative o ambiente virtual. O comando para ativar o ambiente virtual varia conforme o sistema operacional:
+
+- **Windows**:
+    ```bash
+    .\venv\Scripts\activate
+    ```
+
+- **macOS e Linux**:
+    ```bash
+    source venv/bin/activate
+    ```
+
+### Passo 3: Instalação das Dependências
+
+Com o ambiente virtual ativado, instale as dependências listadas no arquivo `requirements.txt`:
+
+```bash
+pip install -r requirements.txt
+```
+
+### Passo 4: Desativação do Ambiente Virtual
+
+Após terminar de usar o ambiente virtual, você pode desativá-lo com o comando:
+
+```bash
+deactivate
+```
+
+### Exemplo de Arquivo `requirements.txt`
+
+Aqui está um exemplo de como o arquivo `requirements.txt` pode ser estruturado:
+
+```
+opencv-python
+torch
+matplotlib
+ultralytics
+```
+
+Certifique-se de que o arquivo `requirements.txt` esteja no mesmo diretório onde você executa o comando `pip install -r requirements.txt`.
+
 ## Uso
 
 ### YOLOPredictor
@@ -26,7 +81,7 @@ A classe `YOLOPredictor` é responsável por carregar o modelo YOLO e realizar p
 
 ### Download dos Modelos
 
-Para baixar os modelos do YOLOv8, você pode utilizar o comando `wget` ou fazer o download diretamente do repositório oficial. Aqui estão exemplos de como baixar os modelos YOLOv8m, YOLOv8m-seg, YOLOv8n, YOLOv8x e YOLOv8x-seg:
+Para baixar os modelos do YOLOv8, você pode utilizar o comando `wget` (disponível em sistemas Linux e macOS) ou fazer o download diretamente do repositório oficial. Aqui estão exemplos de como baixar os modelos YOLOv8m, YOLOv8m-seg, YOLOv8n, YOLOv8x e YOLOv8x-seg:
 
 ```bash
 # YOLOv8m
@@ -45,7 +100,7 @@ wget https://github.com/ultralytics/yolov8/releases/download/v8.0/yolov8x.pt -O 
 wget https://github.com/ultralytics/yolov8/releases/download/v8.0/yolov8x-seg.pt -O yolov8x-seg.pt
 ```
 
-Certifique-se de salvar o modelo no diretório apropriado para que ele possa ser carregado pelo `YOLOPredictor`.
+Para usuários do Windows, você pode baixar os modelos diretamente do navegador acessando os links fornecidos e salvando os arquivos no diretório apropriado para que possam ser carregados pelo `YOLOPredictor`.
 
 #### Inicialização
 
