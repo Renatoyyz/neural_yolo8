@@ -123,6 +123,20 @@ class YOLOPredictor:
         cv2.imshow('Regression Line', bottle_region_with_line)
         cv2.waitKey(0)
 
+        # Cortar a imagem simetricamente ao longo da linha de regressão
+        height, width = bottle_region.shape[:2]
+        mask = np.zeros_like(gray, dtype=np.uint8)
+        cv2.line(mask, (line_x[0], line_y[0]), (line_x[1], line_y[1]), 255, 1)
+        mask = cv2.dilate(mask, np.ones((3, 3), np.uint8), iterations=1)
+        mask = cv2.cvtColor(mask, cv2.COLOR_GRAY2BGR)
+        top_half = cv2.bitwise_and(bottle_region_with_line, mask)
+        bottom_half = cv2.bitwise_and(bottle_region_with_line, cv2.bitwise_not(mask))
+
+        # Visualizar as metades cortadas
+        cv2.imshow('Top Half', top_half)
+        cv2.imshow('Bottom Half', bottom_half)
+        cv2.waitKey(0)
+
         # Calcular o centro do bounding box
         center_x = (x1 + x2) / 2
         center_y = (y1 + y2) / 2
